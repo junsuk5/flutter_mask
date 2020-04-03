@@ -3,10 +3,13 @@ import 'package:mask/ui/view/main_page.dart';
 import 'package:mask/viewmodel/store_model.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(ChangeNotifierProvider.value(
-      value: StoreModel(),
-      child: MyApp(),
-    ));
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(ChangeNotifierProvider.value(
+    value: StoreModel(),
+    child: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
