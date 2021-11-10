@@ -5,7 +5,8 @@ import 'package:url_launcher/url_launcher.dart';
 class RemainStatListTile extends StatelessWidget {
   final Store store;
 
-  RemainStatListTile(this.store);
+  const RemainStatListTile({Key? key, required this.store}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

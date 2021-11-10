@@ -1,49 +1,49 @@
 class Store {
-  String code;
-  String name;
-  String addr;
-  String type;
-  num lat;
-  num lng;
-  String stockAt;
-  String remainStat;
-  String createdAt;
-  num km;
+  Store({
+    required this.addr,
+    required this.code,
+    required this.createdAt,
+    required this.lat,
+    required this.lng,
+    required this.name,
+    required this.remainStat,
+    required this.stockAt,
+    required this.type,
+  });
+  late final String addr;
+  late final String code;
+  late final String createdAt;
+  late final double lat;
+  late final double lng;
+  late final String name;
+  late final String remainStat;
+  late final String stockAt;
+  late final String type;
+  late double km;
 
-  Store(
-      {this.code,
-        this.name,
-        this.addr,
-        this.type,
-        this.lat,
-        this.lng,
-        this.stockAt,
-        this.remainStat,
-        this.createdAt});
-
-  Store.fromJson(Map<String, dynamic> json) {
-    code = json['code'];
-    name = json['name'];
+  Store.fromJson(Map<String, dynamic> json){
     addr = json['addr'];
-    type = json['type'];
+    code = json['code'];
+    createdAt = json['created_at'] ?? '';
     lat = json['lat'];
     lng = json['lng'];
-    stockAt = json['stock_at'];
-    remainStat = json['remain_stat'];
-    createdAt = json['created_at'];
+    name = json['name'];
+    remainStat = json['remain_stat'] ?? '';
+    stockAt = json['stock_at'] ?? '';
+    type = json['type'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
-    data['name'] = this.name;
-    data['addr'] = this.addr;
-    data['type'] = this.type;
-    data['lat'] = this.lat;
-    data['lng'] = this.lng;
-    data['stock_at'] = this.stockAt;
-    data['remain_stat'] = this.remainStat;
-    data['created_at'] = this.createdAt;
-    return data;
+    final _data = <String, dynamic>{};
+    _data['addr'] = addr;
+    _data['code'] = code;
+    _data['created_at'] = createdAt;
+    _data['lat'] = lat;
+    _data['lng'] = lng;
+    _data['name'] = name;
+    _data['remain_stat'] = remainStat;
+    _data['stock_at'] = stockAt;
+    _data['type'] = type;
+    return _data;
   }
 }
