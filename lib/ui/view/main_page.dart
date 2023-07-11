@@ -31,10 +31,10 @@ class MainPage extends StatelessWidget {
     }
 
     if (storeModel.stores.isEmpty) {
-      return Center(
+      return const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text('반경 5km 이내에 재고가 있는 매장이 없습니다'),
             Text('또는 인터넷이 연결되어 있는지 확인해 주세요'),
           ],
@@ -50,10 +50,10 @@ class MainPage extends StatelessWidget {
   }
 
   Widget loadingWidget() {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
+        children: <Widget>[
           Text('정보를 가져오는 중'),
           CircularProgressIndicator(),
         ],

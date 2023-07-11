@@ -75,8 +75,8 @@ class RemainStatListTile extends StatelessWidget {
 
   _launchURL(double lat, double lng) async {
     final url = 'https://google.com/maps/search/?api=1&query=$lat,$lng';
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
     } else {
       throw 'Could not launch $url';
     }

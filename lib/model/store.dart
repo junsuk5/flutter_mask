@@ -34,16 +34,16 @@ class Store {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['addr'] = addr;
-    _data['code'] = code;
-    _data['created_at'] = createdAt;
-    _data['lat'] = lat;
-    _data['lng'] = lng;
-    _data['name'] = name;
-    _data['remain_stat'] = remainStat;
-    _data['stock_at'] = stockAt;
-    _data['type'] = type;
-    return _data;
+    final data = <String, dynamic>{};
+    data['addr'] = addr;
+    data['code'] = code;
+    data['created_at'] = createdAt;
+    data['lat'] = lat;
+    data['lng'] = lng;
+    data['name'] = name;
+    data['remain_stat'] = remainStat;
+    data['stock_at'] = stockAt;
+    data['type'] = type;
+    return data;
   }
 }
